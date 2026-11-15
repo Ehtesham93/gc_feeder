@@ -1,0 +1,27 @@
+{
+    "id": "lmm_canfeeder",
+    "kinesisconsumer": {
+        "applicationname": "",
+        "streamname": "iot-parsed-data",
+        "awsregion": "ap-south-1"
+    },
+    "clickhouseproducer": {
+        "endpoints": "",
+        "user": "default",
+        "password": "",
+        "maxBatchSize": 1700,
+        "maxBatchDataSize": 280000,
+        "maxParallelRequests": 9000,
+        "maxBatchesToWaitBeforeCheckPoint": 20000
+    },
+    "redisproducer": {
+        "host": "",
+        "port": 6379
+    },
+    "metadb": {
+        "host": "",
+        "username": "",
+        "password": "",
+        "querydbschema": ""
+    }
+}

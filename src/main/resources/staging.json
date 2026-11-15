@@ -1,0 +1,40 @@
+{
+    "id": "lmm_gcfeeder",
+    "kinesisconsumer": {
+        "applicationname": "",
+        "streamname": "iot-parsed-data",
+        "awsregion": "ap-south-1"
+    },
+    "clickhouseproducer": {
+        "endpoints": "",
+        "user": "default",
+        "password": "",
+        "maxBatchSize": 1900,
+        "maxBatchDataSize": 500000,
+        "maxParallelRequests": 100,
+        "maxBatchesToWaitBeforeCheckPoint": 20000
+    },
+    "redisproducer": {
+        "host": "",
+        "port": 6379
+    },
+    "metadb": {
+        "host": "",
+        "username": "",
+        "password": "",
+        "querydbschema": ""
+    },
+    "lognmetricswriter": {
+        "environment": "development",
+        "service": "nemo3-lmm-gcfeeder",
+        "instance": "gcfeeder",
+        "ip": "127.0.0.1",
+        "logLevel": "info",
+        "logToConsole": false,
+        "maxSizeBytes": 1048576,
+        "maxBackups": 10,
+        "checkIntervalMs": 3000,
+        "autoInstrument": false,
+        "flushInterval": 3000
+    }
+}

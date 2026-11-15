@@ -1,0 +1,22 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Forward library logs into LogNMetricsWriter pipeline -->
+    <appender name="OBSERVABILITY" class="in.intellicar.infra.lognmetricswriter.observability.ObservabilityLogbackAppender"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="OBSERVABILITY" />
+    </root>
+
+    <!-- Reduce AWS/KCL verbosity -->
+    <logger name="software.amazon.kinesis" level="WARN"/>
+    <logger name="software.amazon.awssdk" level="WARN"/>
+    <logger name="software.amazon.kinesis.leases.dynamodb.DynamoDBLeaseRefresher" level="WARN"/>
+    <logger name="software.amazon.kinesis.leases.dynamodb.DynamoDBLeaseRenewer" level="WARN"/>
+
+</configuration>
